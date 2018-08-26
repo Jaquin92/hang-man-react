@@ -1,0 +1,17 @@
+.letter-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:65px;
+    width:65px;
+    font-size: 20px;
+    border:solid black 2px;
+    margin:2px;
+    cursor: pointer;
+    
+}
+.letter-chosen{
+    color:lightgray;
+    border:solid lightgray 2px;
+    cursor:default;    
+}

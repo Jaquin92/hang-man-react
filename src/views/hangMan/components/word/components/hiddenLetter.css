@@ -1,0 +1,18 @@
+.hiddenLetter-body{
+    border-bottom:solid black 2px;
+    height:65px;
+    width:65px;
+    padding:10px;
+    
+}
+.letter-hidden{
+    display:none;
+}
+.letter-found{
+    border:solid black 2px;
+    height:65px;
+    width:65px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

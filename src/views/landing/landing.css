@@ -1,0 +1,14 @@
+.landing-page-body{
+    height:100vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.landing-page-button{
+    font-size: 28px;
+    padding:50px;
+    border:solid 2px black;
+    border-radius: 50px;
+    cursor:pointer;
+}
