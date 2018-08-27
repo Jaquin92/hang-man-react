@@ -1,9 +1,12 @@
 .keyboard-body{
+    padding: 1%;
+    margin-top:2%;
+    margin-bottom: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height:250px;
-    width:700px;
+    width: 70%;
     border: solid black 1px;
+    border-radius: 5px;
 }

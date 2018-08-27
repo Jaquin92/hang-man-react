@@ -34,9 +34,9 @@ export default class HangMan extends Component {
                 null;
                 break;
             case 'you won':
-                return <PopUp method={this.nextWord} message={'you won'} />
+                return <PopUp method={this.nextWord} buttonText={'Next word!'} word={this.props.currentWord} message={'Good job finding'} />
             case 'you lost':
-                return <PopUp method={this.restart} message={'you lost'} />
+                return <PopUp method={this.restart} buttonText={'Try again!'} word={this.props.currentWord} message={'Nice try, but the word was'} />
         }
     };
     render() {

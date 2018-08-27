@@ -1,9 +1,30 @@
-.popUp-body{
-    background-color:rgba(0, 0, 0, 0.3);
-    height:400px;
-    width:800px;
+.popUp-outer{
+    height: 100vh;
+    display: flex;
+    width: 100vw;
     position: absolute;
-    left: 50%;
-    top:50%;
-    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+}
+.popUp-body{
+    background-color:rgba(254, 254, 254, 0.912);
+    border:solid black .5px;
+    height:45%;
+    width:90%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.popUp-message{
+    margin: 0;
+    font-size: 200%;
+}
+.popUp-button{
+    border: solid black 2px;
+    border-radius: 15%;
+    font-size: 200%;
+    padding: 20px;
+    cursor: pointer;
 }

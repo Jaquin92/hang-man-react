@@ -1,18 +1,18 @@
 .hiddenLetter-body{
     border-bottom:solid black 2px;
-    height:65px;
-    width:65px;
-    padding:10px;
+    font-size: 150%;
+    height: 50%;
+    width: 5%;
+    padding:5px;
     
 }
 .letter-hidden{
     display:none;
 }
 .letter-found{
-    border:solid black 2px;
-    height:65px;
-    width:65px; 
+    
+    
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
