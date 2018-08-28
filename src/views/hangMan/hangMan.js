@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import Keyboard from './components/keyboard/keyboard';
-import Word from './components/word/word_container';
+import Keyboard from './hangMan_components/keyboard/keyboard';
+import Word from './hangMan_components/word/word_container';
+import Bomb from './hangMan_components/bomb/bomb_container';
+import Streak from './hangMan_components/streak/streak_container';
 import './hangMan.css';
-import PopUp from './components/popUp/popUp';
+import PopUp from './hangMan_components/popUp/popUp';
 
 
 export default class HangMan extends Component {
@@ -43,6 +45,9 @@ export default class HangMan extends Component {
         return (
             <div className={'game-body'} >
                 {this.winOrLose()}
+                <div style={{ display: 'flex' }} ><p>hints</p> <Streak /> </div>
+
+                <Bomb />
                 <Word />
                 <Keyboard />
             </div>

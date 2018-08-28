@@ -1,5 +1,5 @@
 import React from 'react';
-import Letter from './components/letter/letter_container';
+import Letter from './keyboard_components/letter/letter_container';
 import { Alphabet } from './alphabet';
 import './keyboard.css'
 

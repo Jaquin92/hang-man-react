@@ -103,7 +103,6 @@ export default function reducer(state = initialState, action) {
                 hints: 3,
                 currentWord: action.payload.word,
                 currentStreak: action.payload.streak
-
             });
         case INCORRECT:
             return Object.assign({}, state, {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HiddenLetter from './components/hiddenLetter_container';
+import HiddenLetter from './word_components/hiddenLetter_container';
 import './word.css'
 
 export default class Word extends Component {
