@@ -25,7 +25,30 @@
 .popUp-button{
     border: solid black 2px;
     border-radius: 15%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     font-size: 200%;
     padding: 20px;
     cursor: pointer;
+}
+
+.popUp-button:hover{
+    box-shadow: none;
+}
+
+.button{
+    border:solid black 1px;
+    border-radius: 5px;
+    padding:5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
+.button:hover{
+    box-shadow: none;
+}
+
+@media(max-width:420px){
+    .popUp-body{
+        height:75%;
+        padding:10px;
+    }
 }

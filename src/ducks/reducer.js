@@ -5,15 +5,16 @@ const ADD_LETTER = 'ADD_LETTER';
 const RANDOM_WORD = 'RANDOM_WORD';
 const INCORRECT = 'INCORRECT';
 const CORRECT = 'CORRECT';
+const USE_HINT = 'USE_HINT';
 
 const initialState = {
     words: [],
     lettersUsed: [],
     incorrectGuesses: 0,
     correctGuesses: [],
-    currentWord: ['none'],
+    currentWord: [],
     currentStreak: 0,
-    hints: 3,
+    hints: 2,
     settings: {
         difficulty: 1
     },
@@ -21,11 +22,11 @@ const initialState = {
     isLoading: false,
 };
 
-export function getWords() {
+export function getWords(difficulty) {
     return {
         type: GET_WORDS,
         payload: axios
-            .get(`/api/words/${initialState.settings.difficulty}`)
+            .get(`/api/words/${difficulty}`)
             .then(response => {
                 return response.data.split(/\r?\n/)
             })
@@ -59,10 +60,17 @@ export function addIncorrectGuess(num) {
     };
 };
 
-export function addCorrectGuess(guesses) {
+export function addCorrectGuess(guess) {
     return {
         type: CORRECT,
-        payload: guesses
+        payload: guess
+    };
+};
+
+export function useHint(letter) {
+    return {
+        type: USE_HINT,
+        payload: letter
     };
 };
 
@@ -75,12 +83,12 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { isLoading: true });
         case `${GET_WORDS}_FULFILLED`:
             return Object.assign({}, state, {
-                lettersUsed: [],
-                incorrectGuesses: 0,
-                correctGuesses: [],
-                currentWord: ['none'],
-                currentStreak: 0,
-                hints: 3,
+                lettersUsed: initialState.lettersUsed,
+                incorrectGuesses: initialState.incorrectGuesses,
+                correctGuesses: initialState.correctGuesses,
+                currentWord: initialState.currentWord,
+                currentStreak: initialState.currentStreak,
+                hints: initialState.hints,
                 settings: initialState.settings,
                 isLoading: false,
                 words: action.payload
@@ -97,10 +105,10 @@ export default function reducer(state = initialState, action) {
             });
         case RANDOM_WORD:
             return Object.assign({}, state, {
-                lettersUsed: [],
-                incorrectGuesses: 0,
-                correctGuesses: [],
-                hints: 3,
+                lettersUsed: initialState.lettersUsed,
+                incorrectGuesses: initialState.incorrectGuesses,
+                correctGuesses: initialState.correctGuesses,
+                hints: initialState.hints,
                 currentWord: action.payload.word,
                 currentStreak: action.payload.streak
             });
@@ -110,9 +118,14 @@ export default function reducer(state = initialState, action) {
             })
         case CORRECT:
             return Object.assign({}, state, {
-                correctGuesses: action.payload
+                correctGuesses: [...state.correctGuesses, action.payload]
             })
-
+        case USE_HINT:
+            return Object.assign({}, state, {
+                hints: (state.hints - 1),
+                lettersUsed: [...state.lettersUsed, action.payload],
+                correctGuesses: [...state.correctGuesses, action.payload]
+            })
         default:
             return state;
     }

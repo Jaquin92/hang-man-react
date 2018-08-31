@@ -1,0 +1,16 @@
+.hints-body{
+    padding:5px;
+    font-size: 150%;
+    margin-bottom:5%;
+    cursor: pointer;
+}
+.number-of-hints{
+    border:solid green 5px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+.number-of-hints:hover{
+    box-shadow:none;
+}

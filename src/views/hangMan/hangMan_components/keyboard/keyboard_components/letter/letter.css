@@ -7,13 +7,18 @@
     width: 10%;
     font-size: 150%;
     border: solid black 2px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 5px;
     margin: 2px;
     cursor: pointer;
-    
+}
+
+.letter-body:hover{
+    box-shadow: none;
 }
 .letter-chosen{
     color:lightgray;
     border:solid lightgray 2px;
-    cursor:default;    
+    cursor:default;  
+    box-shadow: none;
 }

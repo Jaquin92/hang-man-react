@@ -1,0 +1,16 @@
+.form-body{
+    position: absolute;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:rgba(254, 254, 254, 0.912);
+    border:solid black .5px;
+    height:45%;
+    width:90%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+}

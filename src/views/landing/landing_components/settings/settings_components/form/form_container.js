@@ -2,9 +2,9 @@
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
 // actions
-import { addLetter, addCorrectGuess, addIncorrectGuess, randomWord } from '../../ducks/reducer';
+import { getWords } from '../../../../../../ducks/reducer';
 // actual presentational component that will utilize application state and actions (will be exported after being infused with state/actions)
-import HangMan from './hangMan';
+import Form from './form';
 
 
 
@@ -14,20 +14,10 @@ import HangMan from './hangMan';
 // infuses child component (imported above) with state & actions by mapping and then connecting them
 
 // map state
-const mapStateToProps = (reducer) => ({
-    lettersUsed: reducer.lettersUsed,
-    currentWord: reducer.currentWord,
-    incorrectGuesses: reducer.incorrectGuesses,
-    correctGuesses: reducer.correctGuesses,
-    words: reducer.words,
-    currentStreak: reducer.currentStreak
-});
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-    addLetter: (letter) => dispatch(addLetter(letter)),
-    addIncorrectGuess: (num) => dispatch(addIncorrectGuess(num)),
-    addCorrectGuess: (guesses) => dispatch(addCorrectGuess(guesses)),
-    randomWord: (words, streak) => dispatch(randomWord(words, streak)),
+    getWords: (difficulty) => dispatch(getWords(difficulty))
 });
 
 
@@ -36,4 +26,4 @@ const mapDispatchToProps = dispatch => ({
 export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(HangMan));
+)(Form));

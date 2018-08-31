@@ -4,6 +4,7 @@ import Word from './hangMan_components/word/word_container';
 import Bomb from './hangMan_components/bomb/bomb_container';
 import Streak from './hangMan_components/streak/streak_container';
 import './hangMan.css';
+import Hints from './hangMan_components/hints/hints.container';
 import PopUp from './hangMan_components/popUp/popUp';
 
 
@@ -11,20 +12,19 @@ export default class HangMan extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            popUp: false,
-            streak: 0
+            popUp: false
         };
         this.nextWord = this.nextWord.bind(this);
         this.restart = this.restart.bind(this);
     };
     componentWillReceiveProps(nextProps) {
         // eslint-disable-next-line
-        nextProps.currentWord.every(elem => nextProps.correctGuesses.indexOf(elem) > -1) ? this.setState({ popUp: 'you won', streak: (this.state.streak + 1) }) : null;
+        nextProps.currentWord.every(elem => nextProps.correctGuesses.indexOf(elem) > -1) ? this.setState({ popUp: 'you won' }) : null;
         // eslint-disable-next-line
         nextProps.incorrectGuesses === 6 ? this.setState({ popUp: 'you lost' }) : null;
     };
     nextWord() {
-        this.props.randomWord(this.props.words, this.state.streak);
+        this.props.randomWord(this.props.words, (this.props.currentStreak + 1));
         this.setState({ popUp: false });
     };
     restart() {
@@ -33,7 +33,6 @@ export default class HangMan extends Component {
     winOrLose() {
         switch (this.state.popUp) {
             default:
-                null;
                 break;
             case 'you won':
                 return <PopUp method={this.nextWord} buttonText={'Next word!'} word={this.props.currentWord} message={'Good job finding'} />
@@ -45,8 +44,7 @@ export default class HangMan extends Component {
         return (
             <div className={'game-body'} >
                 {this.winOrLose()}
-                <div style={{ display: 'flex' }} ><p>hints</p> <Streak /> </div>
-
+                <div className={'hint-streak'} > <Hints /> <Streak /> </div>
                 <Bomb />
                 <Word />
                 <Keyboard />

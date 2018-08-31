@@ -2,9 +2,9 @@
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
 // actions
-import { addLetter, addCorrectGuess, addIncorrectGuess, randomWord } from '../../ducks/reducer';
+import { useHint } from '../../../../ducks/reducer'
 // actual presentational component that will utilize application state and actions (will be exported after being infused with state/actions)
-import HangMan from './hangMan';
+import Hints from './hints';
 
 
 
@@ -15,19 +15,13 @@ import HangMan from './hangMan';
 
 // map state
 const mapStateToProps = (reducer) => ({
-    lettersUsed: reducer.lettersUsed,
+    hints: reducer.hints,
     currentWord: reducer.currentWord,
-    incorrectGuesses: reducer.incorrectGuesses,
-    correctGuesses: reducer.correctGuesses,
-    words: reducer.words,
-    currentStreak: reducer.currentStreak
+    correctGuesses: reducer.correctGuesses
 });
 
 const mapDispatchToProps = dispatch => ({
-    addLetter: (letter) => dispatch(addLetter(letter)),
-    addIncorrectGuess: (num) => dispatch(addIncorrectGuess(num)),
-    addCorrectGuess: (guesses) => dispatch(addCorrectGuess(guesses)),
-    randomWord: (words, streak) => dispatch(randomWord(words, streak)),
+    useHint: (letter) => dispatch(useHint(letter))
 });
 
 
@@ -36,4 +30,4 @@ const mapDispatchToProps = dispatch => ({
 export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(HangMan));
+)(Hints));

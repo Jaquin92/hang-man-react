@@ -17,7 +17,7 @@ import Landing from './landing';
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-    getWords: () => dispatch(getWords())
+    getWords: (difficulty) => dispatch(getWords(difficulty))
 });
 
 

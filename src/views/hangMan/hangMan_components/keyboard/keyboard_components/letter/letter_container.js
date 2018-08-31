@@ -24,7 +24,7 @@ const mapStateToProps = (reducer) => ({
 const mapDispatchToProps = dispatch => ({
     addLetter: (letter) => dispatch(addLetter(letter)),
     addIncorrectGuess: (num) => dispatch(addIncorrectGuess(num)),
-    addCorrectGuess: (guesses) => dispatch(addCorrectGuess(guesses))
+    addCorrectGuess: (guess) => dispatch(addCorrectGuess(guess))
 
 
 });

@@ -7,3 +7,8 @@
     width:100vw;
     position: relative;
 }
+.hint-streak{
+    display: flex;
+    width:70%;
+    justify-content: space-between;
+}

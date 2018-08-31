@@ -8,6 +8,7 @@ export default class Word extends Component {
         this.props.words.length > 0 ? this.props.randomWord(this.props.words, 0) : this.props.history.push('/')
     };
     renderWord() {
+        console.log(this.props.currentWord)
         return this.props.currentWord.map((letter, i) => {
             return <HiddenLetter key={i} letter={letter} />
         });
