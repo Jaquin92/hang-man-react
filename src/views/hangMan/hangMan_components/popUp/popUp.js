@@ -25,8 +25,6 @@ export default class PopUp extends Component {
     translateWord(word) {
         word = word.toLowerCase()
         axios.get(`/api/translate/${word}`).then(response => {
-            console.log(response.data)
-
             response.data ? this.setState({ translation: `Spanish: ${response.data}`, transResponse: true }) : this.setState({ definition: 'Sorry, our magic translator couldn\'t translate this word :(', transResponse: true })
         }).catch(() => {
             this.setState({ translation: 'Something is wrong!! Try Refreshing your page!', transResponse: true });

@@ -5,8 +5,6 @@ import { withRouter } from "react-router-dom";
 // actual presentational component that will utilize application state and actions (will be exported after being infused with state/actions)
 import Bomb from './bomb';
 
-
-
 /* ========== ~~~~~~~~~~ IMAGE UPLOAD : PARENT ~~~~~~~~~~ ========== */
 // CONTAINER COMPONENT
 // interacts with redux (store of application state)
@@ -16,8 +14,6 @@ import Bomb from './bomb';
 const mapStateToProps = (reducer) => ({
     incorrectGuesses: reducer.incorrectGuesses
 });
-
-
 
 /* ++++++++++ --------------- EXPORTS --------------- ++++++++++ */
 // utilizes "connect" functionality from redux in order to infuse state/actions as props to child component

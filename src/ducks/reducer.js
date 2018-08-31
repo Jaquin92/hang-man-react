@@ -15,9 +15,6 @@ const initialState = {
     currentWord: [],
     currentStreak: 0,
     hints: 2,
-    settings: {
-        difficulty: 1
-    },
     didErr: false,
     isLoading: false,
 };
@@ -89,7 +86,6 @@ export default function reducer(state = initialState, action) {
                 currentWord: initialState.currentWord,
                 currentStreak: initialState.currentStreak,
                 hints: initialState.hints,
-                settings: initialState.settings,
                 isLoading: false,
                 words: action.payload
             });

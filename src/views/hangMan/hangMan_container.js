@@ -5,9 +5,6 @@ import { withRouter } from "react-router-dom";
 import { addLetter, addCorrectGuess, addIncorrectGuess, randomWord } from '../../ducks/reducer';
 // actual presentational component that will utilize application state and actions (will be exported after being infused with state/actions)
 import HangMan from './hangMan';
-
-
-
 /* ========== ~~~~~~~~~~ IMAGE UPLOAD : PARENT ~~~~~~~~~~ ========== */
 // CONTAINER COMPONENT
 // interacts with redux (store of application state)

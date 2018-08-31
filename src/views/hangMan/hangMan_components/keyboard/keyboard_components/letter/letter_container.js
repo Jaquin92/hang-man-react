@@ -6,8 +6,6 @@ import { addLetter, addCorrectGuess, addIncorrectGuess } from '../../../../../..
 // actual presentational component that will utilize application state and actions (will be exported after being infused with state/actions)
 import Letter from './letter';
 
-
-
 /* ========== ~~~~~~~~~~ IMAGE UPLOAD : PARENT ~~~~~~~~~~ ========== */
 // CONTAINER COMPONENT
 // interacts with redux (store of application state)
@@ -25,8 +23,6 @@ const mapDispatchToProps = dispatch => ({
     addLetter: (letter) => dispatch(addLetter(letter)),
     addIncorrectGuess: (num) => dispatch(addIncorrectGuess(num)),
     addCorrectGuess: (guess) => dispatch(addCorrectGuess(guess))
-
-
 });
 
 

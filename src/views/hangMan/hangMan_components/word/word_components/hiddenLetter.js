@@ -11,8 +11,7 @@ const HiddenLetter = (props) => {
         <div className={'hiddenLetter-body'} >
             <div className={styles()} >{props.letter}</div>
         </div>
-
     )
-}
+};
 
 export default HiddenLetter;

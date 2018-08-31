@@ -28,5 +28,5 @@ export default class Settings extends Component {
                 {this.renderForm()}
             </div>
         )
-    }
-}
+    };
+};

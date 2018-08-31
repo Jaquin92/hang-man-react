@@ -5,8 +5,6 @@ const cors = require("cors");
 
 const app = express();
 
-
-
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -17,7 +15,7 @@ app.get("/api/words/:difficulty", (req, res) => {
         url: `http://app.linkedin-reach.io/words?difficulty=${difficulty}&minLength=4&maxLength=10`,
     }).then(response => {
         res.status(200).send(response.data)
-    }).catch(err => console.log(err))
+    }).catch(err => res.send(err.Error))
 });
 
 app.get("/api/define/:word", (req, res) => {
@@ -49,4 +47,4 @@ app.get('/api/translate/:word', (req, res) => {
 });
 
 let port = 3005
-app.listen(port, () => console.log(`listening on port ${port}`));
+app.listen(port, () => console.log(`listening on port: ${port}`));
